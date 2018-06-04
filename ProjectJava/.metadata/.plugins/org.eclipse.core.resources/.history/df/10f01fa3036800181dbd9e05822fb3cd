@@ -1,0 +1,11 @@
+package project17;
+
+import java.util.*;
+
+
+public class SimpleMerge {
+	
+	public static void main(String[] args) {
+		System.out.println("Hello World!");
+	}
+}

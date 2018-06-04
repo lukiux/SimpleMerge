@@ -1,0 +1,80 @@
+package project17;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class SimpleMergeView {
+	private JFrame frame;
+	private JTextArea leftTextArea;
+	private JTextArea rightTextArea;
+	private JScrollPane leftScroll;
+	private JScrollPane rightScroll;
+	private JPanel mainPanel;
+	private JPanel winPanel;
+	private JPanel txtPanel;
+	private JPanel editPanel;
+	private JPanel comparePanel;
+	private JButton leftLoadButton;
+	private JButton rightLoadButton;
+	private JButton editButton;
+	private JButton saveButton;
+	private JButton compareButton;
+	
+	public SimpleMergeView() {
+		frame = new JFrame("SimpleMerge");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setBounds(500, 200, 1000, 500);
+		mainPanel = new JPanel(new BorderLayout());
+		winPanel = new JPanel(new FlowLayout());
+		
+		//Window panel
+		editPanel = new JPanel(new FlowLayout());
+		comparePanel = new JPanel(new FlowLayout());
+		leftTextArea = new JTextArea(200, 200);
+		rightTextArea = new JTextArea(200, 200);
+		leftLoadButton = new JButton("Load");
+		rightLoadButton = new JButton("Load");
+		editButton = new JButton("Edit");
+		saveButton = new JButton("Save");
+		compareButton = new JButton("Compare");
+		editPanel.add(leftLoadButton);
+		editPanel.add(rightLoadButton);
+		editPanel.add(editButton);
+		editPanel.add(saveButton);
+		comparePanel.add(compareButton);
+		winPanel.add(editPanel);
+		winPanel.add(comparePanel);
+		
+		//Text panel
+		leftScroll = new JScrollPane(leftTextArea);
+		rightScroll = new JScrollPane(rightTextArea);
+		txtPanel.add(leftScroll);
+		txtPanel.add(rightScroll);
+		mainPanel.add(winPanel, BorderLayout.NORTH);
+		mainPanel.add(txtPanel, BorderLayout.CENTER);
+		frame.add(mainPanel);
+		frame.setVisible(true);
+				
+	}
+	
+	// Property button
+	public JButton getLeftLoad() {
+		return this.leftLoadButton;
+	}
+	
+	public JButton getRightLoad() {
+		return this.rightLoadButton;
+	}
+	
+	public JButton getEdit() {
+		return this.editButton;
+	}
+	
+	public JButton getSave() {
+		return this.saveButton;
+	}
+	
+	public JButton getCompare() {
+		return this.compareButton;
+	}
+}

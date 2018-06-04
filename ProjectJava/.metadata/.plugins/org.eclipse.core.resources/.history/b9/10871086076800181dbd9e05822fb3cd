@@ -1,0 +1,24 @@
+package project17;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class SimpleMergeView {
+	private JFrame frame;
+	private JPanel mainPanel;
+	private JPanel winPanel;
+	private JPanel txtPanel;
+	private JPanel editPanel;
+	private JButton leftLoadButton;
+	private JButton rightLoadButton;
+	private JButton editButton;
+	private JButton saveButton;
+	private JButton compareButton;
+	
+	public SimpleMergeView() {
+		frame = new JFrame("SimpleMerge");
+		mainPanel = new JPanel(new BorderLayout());
+		winPanel = new JPanel(new FlowLayout());
+	}
+	
+}
