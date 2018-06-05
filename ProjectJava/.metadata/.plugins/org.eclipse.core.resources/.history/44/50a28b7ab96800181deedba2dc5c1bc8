@@ -1,0 +1,34 @@
+package project17;
+
+import java.awt.event.ActionListener;
+
+import javax.swing.JFileChooser;
+import javax.swing.JTextArea;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.filechooser.FileSystemView;
+
+public class Load implements ActionListener{
+	private JTextArea txtArea;
+	private int option;
+	
+	public Load(JTextArea txt, int option) {
+		this.txtArea = txt;
+		this.option = option;
+	}
+	
+	@Override
+	public void action(ActionEvent e) {
+		SimpleMergeController.leftLine = -1;
+		
+		JFileChooser jfc = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
+		jfc.setDialogTitle("Select a file");
+		FileNameExtensionFilter filter = new FileNameExtensionFilter("TXT (*.txt)", "txt");
+		jfc.addChoosableFileFilter(filter);
+		int returnValue = jfc.showOpenDialog(null);
+		if (returnValue == JFileChooser.APPROVE_OPTION) {
+			System.out.println(jfc.getSelectedFile().getPath());
+			String filename = jfc.getSelectedFile().getPath();
+		}
+	}
+	
+}

@@ -1,0 +1,34 @@
+package project17;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+
+import javax.swing.JTextArea;
+
+public class Save implements ActionListener {
+	
+	private JTextArea textArea;
+	private int option;
+	private File file;
+	private String fileName;
+	
+	public Save(JTextArea text, int option) {
+		this.textArea = text;
+		this.option = option;
+		file = null;
+		fileName = null;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if (option == 0 && SimpleMergeController.leftFile != null) {
+			file = new File(SimpleMergeController.leftFile);
+			fileName = file.toString();
+		}
+		
+		
+	}
+	
+
+}

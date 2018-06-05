@@ -1,0 +1,18 @@
+package project17;
+
+import java.awt.*;
+import java.util.*;
+import javax.swing.*;
+
+public class SimpleMergeController {
+	private SimpleMergeView view;
+	private JButton rightLoad;
+	private JButton leftLoad;
+	
+	public SimpleMergeController() {
+		this.view = new SimpleMergeView();
+		// Link Model
+		this.rightLoad = this.view.getRightLoad();
+		this.leftLoad = this.view.getLeftLoad();
+	}
+}

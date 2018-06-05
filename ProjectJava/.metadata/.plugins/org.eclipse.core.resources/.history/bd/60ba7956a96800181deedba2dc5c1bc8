@@ -1,0 +1,112 @@
+package project17;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class SimpleMergeView {
+	private JFrame frame;
+	private JTextArea leftTextArea;
+	private JTextArea rightTextArea;
+	private JScrollPane leftScroll;
+	private JScrollPane rightScroll;
+	private JPanel mainPanel;
+	private JPanel winPanel;
+	private JPanel txtPanel;
+	private JPanel txtPanel1;
+	private JPanel editPanel;
+	private JPanel comparePanel;
+	private JLayeredPane layeredPanel;
+	private JButton leftLoadButton;
+	private JButton rightLoadButton;
+	private JButton lefteditButton;
+	private JButton righteditButton;
+	private JButton leftsaveButton;
+	private JButton rightsaveButton;
+	private JButton compareButton;
+	
+	public SimpleMergeView() {
+		frame = new JFrame("SimpleMerge");
+		
+		frame.setBounds(500, 200, 1000, 500);
+		mainPanel = new JPanel(new BorderLayout());
+		txtPanel = new JPanel();
+		winPanel = new JPanel(new FlowLayout());
+		
+		//Window panel
+		//editPanel = new JPanel(new FlowLayout());
+		comparePanel = new JPanel();
+		//leftTextArea = new JTextArea(50,50);
+		//rightTextArea = new JTextArea(50, 50);
+		//leftLoadButton = new JButton("Load");
+		//rightLoadButton = new JButton("Load");
+		//editButton = new JButton("Edit");
+		//saveButton = new JButton("Save");
+		compareButton = new JButton("Compare");
+		//editPanel.add(leftLoadButton);
+		//editPanel.add(rightLoadButton);
+		//editPanel.add(editButton);
+		//editPanel.add(saveButton);
+		comparePanel.add(compareButton);
+		//winPanel.add(editPanel);
+		//winPanel.add(comparePanel);
+		
+		//Text panel
+		//leftScroll = new JScrollPane(leftTextArea);
+		//rightScroll = new JScrollPane(rightTextArea);
+		//txtPanel.add(leftTextArea);
+		//txtPanel.add(rightTextArea);
+		layeredPanel = new JLayeredPane();
+		
+		leftLoadButton = new JButton("Load");
+		leftLoadButton.setBounds(63, 36, 89, 23);
+		layeredPanel.add(leftLoadButton);
+		
+		lefteditButton = new JButton("Edit");
+		lefteditButton.setBounds(162, 36, 89, 23);
+		layeredPanel.add(lefteditButton);
+		
+		leftsaveButton = new JButton("Save");
+		leftsaveButton.setBounds(261, 36, 89, 23);
+		layeredPanel.add(leftsaveButton);
+		
+		rightLoadButton = new JButton("Load");
+		rightLoadButton.setBounds(411, 36, 89, 23);
+		layeredPanel.add(rightLoadButton);
+		
+		mainPanel.add(comparePanel, BorderLayout.NORTH);
+		mainPanel.add(layeredPanel, BorderLayout.CENTER);
+		frame.add(mainPanel);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setVisible(true);
+				
+	}
+	
+	// Property button
+	public JButton getLeftLoad() {
+		return this.leftLoadButton;
+	}
+	
+	public JButton getRightLoad() {
+		return this.rightLoadButton;
+	}
+	
+	public JButton getEdit() {
+		return this.editButton;
+	}
+	
+	public JButton getSave() {
+		return this.saveButton;
+	}
+	
+	public JButton getCompare() {
+		return this.compareButton;
+	}
+	
+	public JTextArea getLeftText() {
+		return this.leftTextArea;
+	}
+	
+	public JTextArea getRightText() {
+		return this.rightTextArea;
+	}
+}

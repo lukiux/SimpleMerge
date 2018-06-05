@@ -1,0 +1,28 @@
+package project17;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextArea;
+
+public class Edit implements ActionListener {
+	private JTextArea textArea;
+	private int option;
+	
+	public Edit(JTextArea txt, int option) {
+		this.textArea = txt;
+		this.option = option;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		if(option == 0 && textArea.isEditable())
+			textArea.setEditable(false);
+		else if(option == 0 && !textArea.isEditable()) textArea.setEditable(true);
+		
+		if (leftArea.isEditable()) leftArea.setEditable(false);
+		else if (rightArea.isEditable()) rightArea.setEditable(false);
+		else { rightArea.setEditable(true);}
+		}		
+	}

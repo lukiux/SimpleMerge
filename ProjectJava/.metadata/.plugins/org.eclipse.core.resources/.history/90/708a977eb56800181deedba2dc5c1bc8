@@ -1,0 +1,66 @@
+package project17;
+
+import java.awt.EventQueue;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLayeredPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+
+public class SimpleMergeFrame {
+
+	private JFrame frame;
+	private JTextArea leftTextArea;
+	private JTextArea rightTextArea;
+	private JScrollPane scrollLeft;
+	private JScrollPane scrollRight;
+	private JPanel mainPanel;
+	private JPanel winPanel;
+	private JPanel txtPanel;
+	private JPanel txtPanel1;
+	private JPanel editPanel;
+	private JPanel comparePanel;
+	private JLayeredPane layeredPanel;
+	private JButton leftLoadButton;
+	private JButton rightLoadButton;
+	private JButton lefteditButton;
+	private JButton righteditButton;
+	private JButton leftsaveButton;
+	private JButton rightsaveButton;
+	private JButton compareButton;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					SimpleMergeFrame window = new SimpleMergeFrame();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the application.
+	 */
+	public SimpleMergeFrame() {
+		initialize();
+	}
+
+	/**
+	 * Initialize the contents of the frame.
+	 */
+	private void initialize() {
+		frame = new JFrame();
+		frame.setBounds(100, 100, 450, 300);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}

@@ -1,0 +1,36 @@
+package project17;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextArea;
+
+public class Edit implements ActionListener {
+	private JTextArea leftArea;
+	private JTextArea rightArea;
+	
+	public Edit(JTextArea left, JTextArea right) {
+		this.leftArea = left;
+		this.rightArea = right;
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		
+		if (leftArea.isEditable() && rightArea.isEditable()) {
+			leftArea.setEditable(false); rightArea.setEditable(false);
+		}
+		int option = 3;
+		switch(option) {
+		case 1: if (leftArea.isEditable() && rightArea.isEditable()) {
+			leftArea.setEditable(false); rightArea.setEditable(false);
+		}
+		break;
+		case 2: if (leftArea.isEditable()) leftArea.setEditable(false);
+		}
+		}
+		
+	}
+	
+	
+}

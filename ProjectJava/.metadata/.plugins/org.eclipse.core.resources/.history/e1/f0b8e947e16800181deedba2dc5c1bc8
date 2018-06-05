@@ -1,0 +1,10 @@
+package project17;
+
+import javax.swing.JTextArea;
+
+public class Compare {
+	private JTextArea leftArea;
+	private JTextArea rightArea;
+	
+	public COmpare(JTextArea)
+}

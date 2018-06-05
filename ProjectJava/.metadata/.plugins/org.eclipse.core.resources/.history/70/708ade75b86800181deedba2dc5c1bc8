@@ -1,0 +1,21 @@
+package project17;
+
+import java.awt.event.ActionListener;
+
+import javax.swing.JTextArea;
+
+public class Load implements ActionListener{
+	private JTextArea txtArea;
+	private int option;
+	
+	public Load(JTextArea txt, int option) {
+		this.txtArea = txt;
+		this.option = option;
+	}
+	
+	@Override
+	public void action(ActionEvent e) {
+		SimpleMergeController.leftLine = -1;
+	}
+	
+}

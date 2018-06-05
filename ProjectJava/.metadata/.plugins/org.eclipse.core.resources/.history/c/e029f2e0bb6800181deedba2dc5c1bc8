@@ -1,0 +1,63 @@
+package project17;
+
+import java.awt.*;
+import java.util.*;
+import javax.swing.*;
+import javax.swing.event.CaretEvent;
+
+public class SimpleMergeController {
+	private SimpleMergeFrame view;
+	private JButton rightLoad;
+	private JButton leftLoad;
+	private JTextArea leftArea;
+	private JTextArea rightArea;
+	private JButton leftedit;
+	private JButton rightedit;
+	private JButton leftsave;
+	private JButton rightsave;
+	private JButton compare;
+	
+	public static String leftFile = null;  // File name from left panel
+	public static String rightFile = null; // File name from right panel
+	public static int rightLine = -1; // Line number
+	public static int leftLine = -1;  // Line number
+	
+	public SimpleMergeController() {
+		this.view = new SimpleMergeFrame();
+		// Link Model
+		
+		this.leftArea = this.view.getLeftText();
+		this.rightArea = this.view.getRightText();
+		
+		this.rightLoad = this.view.getRightLoad();
+		this.leftLoad = this.view.getLeftLoad();
+		this.leftLoad.addActionListener(new Load(leftArea, 1));
+		this.rightLoad.addActionListener(new Load(leftArea, 2));
+		
+		this.leftedit = this.view.getLeftEdit();
+		this.rightedit = this.view.getRightEdit();
+		this.leftsave = this.view.getLeftSave();
+		this.rightsave = this.view.getRightSave();	
+		
+	}
+	
+	/*public void update(CaretEvent e) {
+		JTextArea editArea = (JTextArea)e.getSource();
+		try {
+			rightLine = -1;
+			int pos = editArea.getCaretPosition();
+			leftLine = editArea.getLineOfOffset(pos) + 1;
+		}
+		catch(Exception ex){}
+	}
+	
+	public void update1(CaretEvent e) {
+		JTextArea editArea = (JTextArea)e.getSource();
+		try {
+			leftLine = -1;
+			int pos = editArea.getCaretPosition();
+			rightLine = editArea.getLineOfOffset(pos) + 1;
+		}
+		catch(Exception ex){}
+	} */
+}
