@@ -13,6 +13,7 @@ import javax.swing.filechooser.FileSystemView;
 public class Load implements ActionListener{
 	private JTextArea txtArea;
 	private int option;
+	public static String filename;
 	
 	public Load(JTextArea txt, int option) {
 		this.txtArea = txt;
@@ -30,7 +31,7 @@ public class Load implements ActionListener{
 		int returnValue = jfc.showOpenDialog(null);
 		if (returnValue == JFileChooser.APPROVE_OPTION) {
 			System.out.println(jfc.getSelectedFile().getPath());
-			String filename = jfc.getSelectedFile().getPath();
+			filename = jfc.getSelectedFile().getPath();
 			
 			if(option == 0)
 				SimpleMergeController.leftFile = filename;

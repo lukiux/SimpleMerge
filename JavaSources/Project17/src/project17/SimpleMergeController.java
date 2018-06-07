@@ -42,6 +42,7 @@ public class SimpleMergeController {
 		this.rightedit.addActionListener(new Edit(rightArea, 1));
 		this.leftsave.addActionListener(new Save(leftArea, 0));
 		this.rightsave.addActionListener(new Save(rightArea, 1));
+		this.compare.addActionListener(new Compare(leftArea, rightArea));
 		
 	}
 }
