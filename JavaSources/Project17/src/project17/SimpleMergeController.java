@@ -16,6 +16,8 @@ public class SimpleMergeController {
 	private JButton leftsave;
 	private JButton rightsave;
 	private JButton compare;
+	private JButton copytoleft;
+	private JButton copytoright;
 	
 	public static String leftFile = null;  // File name from left panel
 	public static String rightFile = null; // File name from right panel
@@ -34,6 +36,8 @@ public class SimpleMergeController {
 		this.leftsave = this.view.getLeftSave();
 		this.rightsave = this.view.getRightSave();
 		this.compare = this.view.getCompare();
+		this.copytoleft = this.view.getCopytoLeft();
+		this.copytoright = this.view.getCopytoRigth();
 		
 		//call ActionListener
 		this.leftLoad.addActionListener(new Load(leftArea, 0));

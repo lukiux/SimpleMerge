@@ -31,6 +31,8 @@ public class SimpleMergeView {
 	private JButton leftsaveButton;
 	private JButton rightsaveButton;
 	private JButton compareButton;
+	private JButton copytoleft;
+	private JButton copytoright;
 
 	/**
 	 * Create the application.
@@ -54,10 +56,12 @@ public class SimpleMergeView {
 		
 		comparePanel = new JPanel();
 		
-		JButton btnCopyToRight = new JButton("Copy to Right");
-		comparePanel.add(btnCopyToRight);
+		copytoright = new JButton("Copy to Right");
+		comparePanel.add(copytoright);		
 		compareButton = new JButton("Compare");
 		comparePanel.add(compareButton);
+		copytoleft = new JButton("Copy to Left");
+		comparePanel.add(copytoleft);
 		
 		//Center panel
 		
@@ -106,8 +110,7 @@ public class SimpleMergeView {
 		
 		mainPanel.add(comparePanel, BorderLayout.NORTH);
 		
-		JButton btnCopyToLeft = new JButton("Copy to Left");
-		comparePanel.add(btnCopyToLeft);
+		
 		mainPanel.add(layeredPanel, BorderLayout.CENTER);		
 		
 		frame.getContentPane().add(mainPanel);
@@ -141,6 +144,14 @@ public class SimpleMergeView {
 	
 	public JButton getCompare() {
 		return this.compareButton;
+	}
+	
+	public JButton getCopytoLeft() {
+		return this.copytoleft;
+	}
+	
+	public JButton getCopytoRigth() {
+		return this.copytoright;
 	}
 	
 	public JTextArea getLeftText() {
