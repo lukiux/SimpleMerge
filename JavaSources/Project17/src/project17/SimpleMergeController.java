@@ -1,9 +1,9 @@
 package project17;
 
-import java.awt.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.event.CaretEvent;
+import javax.swing.event.CaretListener;
 
 public class SimpleMergeController {
 	private SimpleMergeView view;
@@ -18,6 +18,14 @@ public class SimpleMergeController {
 	private JButton compare;
 	private JButton copytoleft;
 	private JButton copytoright;
+	//private JButton allCpyToRight;
+	//private JButton allCpyToLeft;
+	
+	public static int compOption = 0;
+	public static int leftLineNum = -1;
+	public static int rightLineNum = -1;
+	public static ArrayList<Integer> lbl;
+	public static ArrayList<Integer> rbl;
 	
 	public static String leftFile = null;  // File name from left panel
 	public static String rightFile = null; // File name from right panel
@@ -38,6 +46,8 @@ public class SimpleMergeController {
 		this.compare = this.view.getCompare();
 		this.copytoleft = this.view.getCopytoLeft();
 		this.copytoright = this.view.getCopytoRigth();
+		//this.allCpyToRight = this.view.getAllCpyToRight();
+		//this.allCpyToLeft = this.view.getAllCpyToLeft();
 		
 		//call ActionListener
 		this.leftLoad.addActionListener(new Load(leftArea, 0));
@@ -47,6 +57,35 @@ public class SimpleMergeController {
 		this.leftsave.addActionListener(new Save(leftArea, 0));
 		this.rightsave.addActionListener(new Save(rightArea, 1));
 		this.compare.addActionListener(new Compare(leftArea, rightArea));
+		this.copytoright.addActionListener(new MergeEventHandler(leftArea, rightArea, 0));
+		this.copytoleft.addActionListener(new MergeEventHandler(leftArea, rightArea, 1));
+		//this.allCpyToRight.addActionListener(new CopyEventHandler(leftArea, rightArea, 0));
+		//this.allCpyToLeft.addActionListener(new CopyEventHandler(leftArea, rightArea, 1));
+		
+		leftArea.addCaretListener(new CaretListener() {
+            public void caretUpdate(CaretEvent e) {
+                JTextArea editArea = (JTextArea)e.getSource();
+                try {
+                   rightLineNum = -1;
+                    int caretpos = editArea.getCaretPosition();
+                    leftLineNum = editArea.getLineOfOffset(caretpos) + 1;
+
+                }
+                catch(Exception ex) { }
+            }
+        });
+      
+		rightArea.addCaretListener(new CaretListener() {
+            public void caretUpdate(CaretEvent e) {
+                JTextArea editArea = (JTextArea)e.getSource();
+                try {
+                   leftLineNum = -1;
+                    int caretpos = editArea.getCaretPosition();
+                    rightLineNum = editArea.getLineOfOffset(caretpos) + 1;
+                }
+                catch(Exception ex) { }
+            }
+		});
 		
 	}
 }

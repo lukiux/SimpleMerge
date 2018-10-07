@@ -2,7 +2,6 @@ package project17;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.FlowLayout;
 
 import javax.swing.JButton;
@@ -33,6 +32,8 @@ public class SimpleMergeView {
 	private JButton compareButton;
 	private JButton copytoleft;
 	private JButton copytoright;
+	private JButton allCpyToRight;
+	private JButton allCpyToLeft;
 
 	/**
 	 * Create the application.
@@ -160,5 +161,12 @@ public class SimpleMergeView {
 	
 	public JTextArea getRightText() {
 		return this.rightTextArea;
+	}
+	
+	public JButton getAllCpyToLeft() {
+		return this.allCpyToLeft;
+	}
+	public JButton getAllCpyToRight() {
+		return this.allCpyToRight;
 	}
 }
