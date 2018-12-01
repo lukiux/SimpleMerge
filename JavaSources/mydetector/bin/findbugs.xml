@@ -1,0 +1,10 @@
+<FindbugsPlugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+				xsi:noNamespaceSchemaLocation="findbugsplugin.xsd"
+                pluginid="com.h3xstream.findsecbugs" 
+                provider="Simple Merge rule" 
+                website="http://itcrowd.pl/itcrowd-findbugs">
+                
+	<Detector class="detector.SimpleMergeDetector" reports="UNUSED_LOCAL_VARIABLES_BUG" />
+	<BugPattern type="UNUSED_LOCAL_VARIABLES_BUG" abbrev="GS" category="CORRECTNESS" />
+	
+</FindbugsPlugin>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MessageCollection 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="messagecollection.xsd">
+	
+	<Plugin>
+		<ShortDescription>FindBugs unused variables rule</ShortDescription>
+        <Details>Provides detectors as part of the FindBugs detector</Details>
+    </Plugin>
+    
+    <Detector class="detector.SimpleMergeDetector">
+    	<Details>Check if there is fieldName which start with "C"</Details>
+    </Detector>
+    
+    <BugPattern type="UNUSED_LOCAL_VARIABLES_BUG">
+    	<ShortDescription>"c" should be together field name</ShortDescription>
+    </BugPattern>
+    
+    <BugCode abbrev="GS">Add field name start with 'c'</BugCode>
+    
+</MessageCollection>
