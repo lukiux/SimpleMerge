@@ -10,8 +10,6 @@ import org.junit.jupiter.api.Test;
 
 class EditTest {
 
-	
-	private int option;
 	private SimpleMergeView view;
 	private JTextArea leftArea;
 	private JTextArea rightArea;
