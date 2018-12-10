@@ -32,6 +32,5 @@ public class Edit implements ActionListener {
 			else if(option == 0 && !textArea.isEditable()) textArea.setEditable(true);
 			else if(option == 1 && (textArea.isEditable() || SimpleMergeController.rightFile == null)) textArea.setEditable(false);
 			else if(option == 1 && !textArea.isEditable()) textArea.setEditable(true);*/
-			
 	}
 }
