@@ -1,4 +1,4 @@
-package project17;
+package simplemerge;
 
 import java.util.*;
 import javax.swing.*;
@@ -18,8 +18,8 @@ public class SimpleMergeController {
 	private JButton compare;
 	private JButton copytoleft;
 	private JButton copytoright;
-	//private JButton allCpyToRight;
-	//private JButton allCpyToLeft;
+	private JButton allCpyToRight;
+	private JButton allCpyToLeft;
 	
 	public static int compOption = 0;
 	public static int leftLineNum = -1;
@@ -29,6 +29,14 @@ public class SimpleMergeController {
 	
 	public static String leftFile = null;  // File name from left panel
 	public static String rightFile = null; // File name from right panel
+	
+	public static void setLeftLineNum(int k) {
+		SimpleMergeController.leftLineNum = k;
+	}
+	
+	public static void setRightLineNum(int k) {
+		SimpleMergeController.rightLineNum = k;
+	}
 	
 	public SimpleMergeController() {
 		this.view = new SimpleMergeView();
@@ -46,8 +54,8 @@ public class SimpleMergeController {
 		this.compare = this.view.getCompare();
 		this.copytoleft = this.view.getCopytoLeft();
 		this.copytoright = this.view.getCopytoRigth();
-		//this.allCpyToRight = this.view.getAllCpyToRight();
-		//this.allCpyToLeft = this.view.getAllCpyToLeft();
+		this.allCpyToRight = this.view.getAllCpyToRight();
+		this.allCpyToLeft = this.view.getAllCpyToLeft();
 		
 		//call ActionListener
 		this.leftLoad.addActionListener(new Load(leftArea, 0));
@@ -59,19 +67,19 @@ public class SimpleMergeController {
 		this.compare.addActionListener(new Compare(leftArea, rightArea));
 		this.copytoright.addActionListener(new MergeEventHandler(leftArea, rightArea, 0));
 		this.copytoleft.addActionListener(new MergeEventHandler(leftArea, rightArea, 1));
-		//this.allCpyToRight.addActionListener(new CopyEventHandler(leftArea, rightArea, 0));
-		//this.allCpyToLeft.addActionListener(new CopyEventHandler(leftArea, rightArea, 1));
+		this.allCpyToRight.addActionListener(new CopyEventHandler(leftArea, rightArea, 0));
+		this.allCpyToLeft.addActionListener(new CopyEventHandler(leftArea, rightArea, 1));
 		
 		leftArea.addCaretListener(new CaretListener() {
             public void caretUpdate(CaretEvent e) {
                 JTextArea editArea = (JTextArea)e.getSource();
                 try {
-                   rightLineNum = -1;
+                	rightLineNum = -1;
                     int caretpos = editArea.getCaretPosition();
                     leftLineNum = editArea.getLineOfOffset(caretpos) + 1;
 
                 }
-                catch(Exception ex) { }
+                catch(Exception ex) { ex.printStackTrace(); }
             }
         });
       
@@ -79,13 +87,31 @@ public class SimpleMergeController {
             public void caretUpdate(CaretEvent e) {
                 JTextArea editArea = (JTextArea)e.getSource();
                 try {
-                   leftLineNum = -1;
+                	leftLineNum = -1;
                     int caretpos = editArea.getCaretPosition();
                     rightLineNum = editArea.getLineOfOffset(caretpos) + 1;
                 }
-                catch(Exception ex) { }
+                catch(Exception ex) { ex.printStackTrace(); }
             }
 		});
 		
 	}
+
+	public JButton getLeftedit() {
+		return leftedit;
+	}
+
+	public void setLeftedit(JButton leftedit) {
+		this.leftedit = leftedit;
+	}
+
+	public JButton getRightedit() {
+		return rightedit;
+	}
+
+	public void setRightedit(JButton rightedit) {
+		this.rightedit = rightedit;
+	}
+	
+	
 }

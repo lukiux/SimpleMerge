@@ -1,4 +1,4 @@
-package project17;
+package simplemerge;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -35,6 +35,13 @@ public class SimpleMergeView {
 	private JButton allCpyToRight;
 	private JButton allCpyToLeft;
 
+	static SimpleMergeView inst = null;
+	public static SimpleMergeView createFrame() {
+		if (inst == null)
+			inst = new SimpleMergeView();
+		return inst;
+	}
+	
 	/**
 	 * Create the application.
 	 */
@@ -57,12 +64,16 @@ public class SimpleMergeView {
 		
 		comparePanel = new JPanel();
 		
+		
 		copytoright = new JButton("Copy to Right");
 		comparePanel.add(copytoright);		
 		compareButton = new JButton("Compare");
 		comparePanel.add(compareButton);
 		copytoleft = new JButton("Copy to Left");
 		comparePanel.add(copytoleft);
+		
+		allCpyToRight = new JButton("...");
+		allCpyToLeft = new JButton("...");
 		
 		//Center panel
 		

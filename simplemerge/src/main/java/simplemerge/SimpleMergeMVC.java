@@ -1,4 +1,4 @@
-package project17;
+package simplemerge;
 
 public class SimpleMergeMVC {
 	
